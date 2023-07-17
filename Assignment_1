@@ -1,0 +1,386 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {./images/} }
+\usepackage{amsmath}  % Add this line in the preamble of your LaTeX document
+\usepackage{amsthm}
+\usepackage{amssymb}  % or use \usepackage{amsfonts}
+\usepackage{gensymb}
+
+\title{Assignment 1 - QIS CSCI-C290}
+\author{Ryan McCoy}
+\date{July 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 0.1}
+Consider the quadratic equation
+$ax^2 + bx + c = 0$
+Please provide a root to this equation. If there are more, just provide
+one of them.
+
+Using the quadratic equation, the solutions for this problem are: 
+
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+
+\section{Problem 0.2}
+\
+What is the value of h, in terms of x?
+\\
+
+The unit vector with a $60\degree$ angle corresponds to a point of $(\frac{1}{2}, \frac{\sqrt{3}}{2})$
+\[
+tan \theta = \frac{h}{x}
+\xrightarrow{} tan (60\degree) = \frac{h}{x}
+\xrightarrow{} xtan (60\degree) = h 
+\xrightarrow{} x * \sqrt{3} = h
+\]
+
+Therefore,
+\[
+h = x\sqrt{3}
+\]
+
+\section{Problem 0.3}
+Rewrite $1 + i$ in the form $re^{i\phi}$. Please make sure that your $r$ is positive and that your $\phi$ is in the range $[0, 2\pi]$.
+\\
+\\
+Using the magnitude equation $|z| = \sqrt{a^2 + b^2 + ... k^2}$
+\\
+\\
+Then it follows that $1+i$ has the coefficients a and b of $a = 1, b = 1$.
+Using the magnitude equation above, we find $|z| = \sqrt{1^2 + 1^2} = \sqrt{1+1} = \sqrt{2}$
+\\
+\\
+Next, using that $tan \theta = \frac{h}{x}$, rearranging the values gives us $\theta = tan^{-1} \frac{h}{x}$. Substituting in the values of x and h, we have: 
+$\theta = tan^{-1} \frac{1}{1} = tan^{-1}(1)$
+\\
+\\
+\(\therefore\) $\theta = \frac{\pi}{4}, \frac{5\pi}{4}$; however, the question refers to the first quadrant so $\frac{\pi}{4}$ is the only answer that fits.
+\\
+\\
+Finally, we can use our answer for $\theta$ and add this to Euler's formula to put the complex coordinates into polar form.
+\[
+re^{i\phi} = \sqrt{2}e^{i \frac{\pi}{4}} \qed
+\]
+
+
+
+\section{Problem 1}
+Answer true or false to the following statements:
+$\left| 0 \right\rangle = 
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}$
+
+False -- The $\left| 0 \right\rangle$ state is represented by the vector :
+$\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}$.
+Since  $\begin{bmatrix}
+0 \\
+0
+\end{bmatrix} \ne \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}$ this is false.
+
+
+\section{Problem 2}
+Answer true or false to the following statements:
+$\left| 1 \right\rangle = 
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}$
+
+False -- The $\left| 1 \right\rangle$ state is represented by the vector :
+$\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}$.
+Since  $\begin{bmatrix}
+1 \\
+1
+\end{bmatrix} \ne \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}$ this is false.
+
+\section{Problem 3}
+Answer true or false to the following statements:
+
+A quantum state is a unit vector in a complex vector space.
+\\
+\\
+True, but more specifically on page 72 of the Martin La-Forest document, "A quantum state is described by unit vectors living in a Complex Hilbert space."
+
+
+\section{Problem 4}
+Answer true or false to the following statements:
+
+Measurements can only be performed in the computational basis.
+\\
+\\ 
+False, as per page 79 of the Martin La-Forest document, measurement can be performed in both the computational basis $\{\left| 0 \right\rangle,\left| 1 \right\rangle\}$ and any other orthogonal basis (which is any basis since a basis must be orthogonal), such as $\{\left| + \right\rangle,\left| - \right\rangle\}$.
+
+
+\section{Problem 5}
+The probability amplitude of $\left| x \right\rangle$ is equal to the probability that the outcome of a measurement is x.
+\\
+\\
+False, when referring to the probability amplitude, $\psi(x)$ represents the wave function of a quantum system. Since we are interested in the probability, we must know the relationship between the amplitude and the probability. 
+
+Thus the $P(x)$ of finding the wave at position x is given by the square of the absolute value of the probability amplitude.
+
+In other words, 
+
+\[
+P(x) = |\psi(x)|^2
+\]
+\\
+\\
+So the probability amplitude of $\left| x \right\rangle$ is equal to the square of the probability that the outcome of a measurement of x. (i.e. $|x^2|$)
+
+
+
+\section{Problem 6}
+The inner product of $\left| + \right\rangle$ and $\left| - \right\rangle$ is 1.
+Now indicate the correct answer and how you determined it:
+\\
+\[
+\left| + \right\rangle = \frac{1}{\sqrt{2}}\left| 0 \right\rangle + 
+\frac{1}{\sqrt{2}}\left| 1 \right\rangle
+\]
+\[
+\left| - \right\rangle = \frac{1}{\sqrt{2}}\left| 0 \right\rangle - 
+\frac{1}{\sqrt{2}}\left| 1 \right\rangle
+\]
+
+\[
+\left| + \right\rangle = \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+
+\[
+\left| - \right\rangle = \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+
+In order to determine if the inner product of the two vectors is equal to 1, we have to take the dot product. Unfortunately the dimensions of the vectors aren't currently set up for us to multiple. So transforming these, we get: 
+
+\[
+\left| + \right\rangle * \left| - \right\rangle = \left\langle +^\dagger | - \right\rangle
+\]
+
+\[
+\left\langle +^\dagger \right | = \begin{bmatrix}
+\frac{1}{\sqrt{2}}  && \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+
+\[
+\left| + \right\rangle * \left| - \right\rangle = \left\langle +^\dagger | - \right\rangle = \begin{bmatrix}
+\frac{1}{\sqrt{2}}  && \frac{1}{\sqrt{2}}
+\end{bmatrix} * \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+
+\[
+= \frac{1}{\sqrt{2}} * \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}* -\frac{1}{\sqrt{2}} = \frac{1}{2} - \frac{1}{2} = 0
+\]
+
+False, the inner product of these two vectors is equal to 0. We can double verify this by understanding that the +, - basis is orthogonal and therefore has a 0 inner product.
+
+\section{Problem 7}
+In $\mathbb{C}^2$, how many \textbf{real} unit vectors are there whose projection onto $\left| 1 \right\rangle$ has length $\frac{\sqrt{3}}{2}$?
+
+A projection can be found by taking the inner product of some vector, say $\Vec{v}$ and a unit vector such that $a^2 + b^2 = 1$
+Since we looking for a real unit vector where $|b| = \frac{\sqrt{3}}{2}$
+
+Then $b = \pm \frac{\sqrt{3}}{2}$.
+
+Using the constraints of the unit vectors, $a = \pm\sqrt{1-b^2}$
+\[
+a = \pm\sqrt{1-b^2} = \pm\sqrt{1-(\frac{\sqrt{3}}{2})^2} = \pm\sqrt{1-(\frac{3}{4})} = \pm\frac{1}{2}
+\]
+
+Therefore we have 4 possible vectors 
+$\begin{bmatrix}
+ \pm \frac{\sqrt{3}}{2}\\
+ \pm\frac{1}{2}
+\end{bmatrix}$
+
+
+
+\section{Problem 8}
+In $\mathbb{C}^2$, how many \textbf{complex} unit vectors are there whose projection onto $\left| 1 \right\rangle$ has length $\frac{\sqrt{3}}{2}$?
+
+If we allow for b to be complex, then we can hold same constraint of $|b| = \frac{\sqrt{3}}{2}$; however we can additionally define $b = \frac{\sqrt{3}}{2} e^{i \theta}$. With this knowledge, there are unlimited unit vector pairs that allow for this projection. This is because $\theta$ can be anything in the domain of $[0, 2\pi)$
+
+\section{Problem 9}
+In a double slit experiment with three different incident objects we
+find that the center of the detector (A) as shown has an intensity
+1, when only one of the slits is open. What would be the intensity
+of the same point when both slits are open in each of the following
+cases: (a) bullet, (b) wave, (c) quantum mechanics (wave or photon)
+
+In the case (a) bullets are discrete, the probability of arrival is 
+ $P_{1,2}{(x)} = P_1{(x)} + P_2{(x)}$ and there is no interference. We know that $P_{1}(x) = 1$ and $P_{2}(x) = 1$ as given. So we are asked to calculate 
+. In the case (b) water waves, they are continuous, the intensity is 
+ and (or, rather, because) there is interference. We also have 
+ and 
+ as well as 
+ (so heights add up but the intensities do not). We are asked to determine 
+ and we calculate as follows 
+.
+
+Now we can predict that the answer for (c) is going to be similar since the math is almost the same. So when we deal with photons (or electrons) they are discrete, the probability of arrival is 
+ and here we have a complex amplitude instead of the height of a wave. The formulas are: 
+, 
+ (these are given) and we need to find 
+. But we remember that like in the case of water waves even if the probabilities do not add up, the complex amplitudes do. Thus we write 
+ which means that 
+.
+
+
+\section{Problem 10}
+
+A qubit exists in state, $\left| \phi \right\rangle = \frac{1}{2} \left| 0 \right\rangle + \frac{\sqrt{3}}{2}\left| 1 \right\rangle$
+
+If we measure this in the following $\left| u \right\rangle$ basis:
+
+$\left| u \right\rangle = \frac{\sqrt{3}}{2} \left| 0 \right\rangle + \frac{1}{2}\left| 1 \right\rangle$
+
+$\left| u^\perp \right\rangle = -\frac{1}{2} \left| 0 \right\rangle + \frac{\sqrt{3}}{2}\left| 1 \right\rangle$
+\\
+\\
+What is the probability that $\left| \phi \right\rangle$ in state $\left| u \right\rangle$ when measured in orthonormal bases $u$ and $u^\perp$?
+
+First, find the inner product between the two vectors and take the square of the amplitude. 
+
+\[
+\left| u \right\rangle * \left| \phi \right\rangle = \left\langle u^\dagger | \phi \right\rangle
+\]
+
+\[
+\left\langle u^\dagger \right | = \begin{bmatrix}
+\frac{\sqrt{3}}{2}  && \frac{1}{2}
+\end{bmatrix}
+\]
+
+\[
+\left| u \right\rangle * \left| \psi \right\rangle = \left\langle u^\dagger | \psi \right\rangle = \begin{bmatrix}
+\frac{\sqrt{3}}{2}  && \frac{1}{2}
+\end{bmatrix} * \begin{bmatrix}
+\frac{1}{2} \\
+\frac{\sqrt{3}}{2}
+\end{bmatrix}
+\]
+
+\[
+= \frac{\sqrt{3}}{2} * \frac{1}{2} + \frac{1}{2}* \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{4} = \frac{\sqrt{3}}{2}
+\]
+
+Lastly, to find the probability of finding this state in the $u$ basis, the amplitude must be squared: 
+
+\[
+(\frac{\sqrt{3}}{2})^2 = \frac{3}{4} = 0.75
+\]
+
+To find the probability of finding this state in the $u^\perp$ basis: 
+First, find the inner product between the two vectors and take the square of the amplitude. 
+
+\[
+\left| u^\perp \right\rangle * \left| \phi \right\rangle = \left\langle u^{\perp\dagger} | \phi \right\rangle
+\]
+
+\[
+\left\langle u^{\perp\dagger} \right | = \begin{bmatrix}
+-\frac{1}{2} && \frac{\sqrt{3}}{2}
+\end{bmatrix}
+\]
+
+\[
+\left| u^\perp \right\rangle * \left| \psi \right\rangle = \left\langle u^{\perp\dagger} | \psi \right\rangle = \begin{bmatrix}
+-\frac{1}{2} && \frac{\sqrt{3}}{2}
+\end{bmatrix} * \begin{bmatrix}
+\frac{1}{2} \\
+\frac{\sqrt{3}}{2}
+\end{bmatrix}
+\]
+
+\[
+= -\frac{1}{2} * \frac{1}{2} + \frac{\sqrt{3}}{2}* \frac{\sqrt{3}}{2} = -\frac{1}{4} + \frac{3}{4} = \frac{1}{2}
+\]
+
+Lastly, to find the probability of finding this state in the $u^\perp$ basis, the amplitude must be squared: 
+
+\[
+(\frac{1}{2})^2 = \frac{1}{4} = 0.25
+\]
+
+
+This makes sense since $u + u^\perp = 0.75 + 0.25 =1$
+
+
+\section{Problem 11}
+For a state $\left| \phi \right\rangle = a \left| 0 \right\rangle + b\left| 1 \right\rangle$, where a and b satisfy all the rules of
+a quantum state. After measuring $\left| \phi \right\rangle$ we find probability of $\left| 0 \right\rangle$ is $\frac{9}{25}$. What are the numerical values of a and b?
+
+Since probabilities for wave amplitudes are determined by squaring their corresponding coefficients. In other words, $P(a) = a^2 = \frac{9}{25}$. Therefore the real coefficient of $a = \frac{3}{5}$. 
+
+To find b we use the knowledge that $\phi$ is normalized so $a^2 + b^2 + ... + k^2 = 1$, then $b^2 = 1- a^2 \xrightarrow{} b = \sqrt{1-a^2}$. 
+
+Using the value for a found above, $b =\sqrt{1-\frac{9}{25}} = \sqrt{\frac{16}{25}} = \frac{4}{5}$
+
+\(\therefore\) $\left| \phi \right\rangle = \frac{3}{5} \left| 0 \right\rangle + \frac{4}{5}\left| 1 \right\rangle$
+
+
+\section{Problem 12}
+A qubit exists in state, $\left| \phi \right\rangle = \frac{\sqrt{3}}{2} \left| 0 \right\rangle + \frac{1}{2}\left| 1 \right\rangle$
+
+If we measure this in the following $\left| u \right\rangle$ basis
+\\
+$\left| u \right\rangle = cos\theta \left| 0 \right\rangle + sin\theta \left| 1 \right\rangle$
+\\
+$\left| u^\perp \right\rangle = sin\theta \left| 0 \right\rangle - cos\theta \left| 1 \right\rangle$
+In order for $u$ and $u^\perp$ to be equally probable, what should be the
+value of $\theta$? (consider a value between 0 and 90 degrees)
+
+\section{Problem 13}
+Vertically aligned light is incident on the left most polarizing filter
+as shown above. If a second filter is placed at 45 degrees, what is
+the probability that photon is transmitted through both filters? Now we place a third filter between these two as shown. At what
+angle should we place these filters such that probability of photons
+exiting at the final filter is maximum? In the final setup, what is the
+probability of photon transmitting through all three filters? (Hint:
+an interactive animation may help you prove your solution
+.)
+
+\section{Problem 14}
+A qubit is either in the state 
+$\left| u \right\rangle = cos(\frac{\pi}{4}-\frac{x}{2})\left| 0 \right\rangle+ sin(\frac{\pi}{4}-\frac{x}{2})\left| 1 \right\rangle$, 
+
+$\left| v \right\rangle = cos(\frac{\pi}{4}+\frac{x}{2})\left| 0 \right\rangle+ sin(\frac{\pi}{4}+\frac{x}{2})\left| 1 \right\rangle$ and we want to determine which state it is in by measuring it. One of the following two measurements is optimal in terms of the probability of success.
+Measurement I: Measure in the basis 
+
+$\left| u \right\rangle = cos(\frac{\pi}{4}-\frac{x}{2})+ sin(\frac{\pi}{4}-\frac{x}{2})$,
+
+$\left| u^\perp \right\rangle = -sin(\frac{\pi}{4}+\frac{x}{2})+ cos(\frac{\pi}{4}+\frac{x}{2})$
+
+. If the outcome is $u$, guess that
+the qubit was the state $\left| u \right\rangle$, and if the outcome was $u^\perp$, guess that it was in the state $\left| v \right\rangle$.
+
+\end{document}
